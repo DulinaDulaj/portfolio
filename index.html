@@ -281,13 +281,23 @@
             emailjs.sendForm('service_0fmsffq', 'template_qidn8we', form)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
-                    alert('Message sent successfully!');
+                    Swal.fire({
+                    title: "Good job!",
+                    text: "Email send successfully",
+                    icon: "success"
+                    });
                     form.reset();
                 }, function(error) {
                     console.log('FAILED...', error);
-                    alert('Failed to send message. Please try again later.');
+                    Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+ 
+                    });
                 });
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
